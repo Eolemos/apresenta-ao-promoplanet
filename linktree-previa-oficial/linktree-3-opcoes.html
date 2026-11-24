@@ -1,0 +1,23 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Linktree PromoPlanet: 3 opções</title><style>
+*{box-sizing:border-box}body{margin:0;background:#E9E7F2;color:#1E1C2E;font:600 15px/1.45 system-ui,sans-serif}
+header{padding:22px 18px 6px;text-align:center}h1{margin:0;font-size:22px;letter-spacing:-.01em}header p{margin:6px auto 0;max-width:720px;font-weight:500;opacity:.75;font-size:14px}
+.ctl{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin:14px 0 4px;font-size:13px}.ctl label{display:inline-flex;gap:6px;align-items:center;background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer}
+.g{display:flex;gap:26px;justify-content:center;padding:16px 18px 30px;overflow-x:auto}
+figure{margin:0;flex:none;width:390px}figcaption{text-align:center;margin-bottom:10px}figcaption b{display:block;font-size:16px}figcaption small{display:block;font-weight:500;opacity:.7;font-size:12.5px}
+iframe{width:390px;height:860px;border:0;border-radius:26px;background:#fff;box-shadow:0 10px 30px rgba(20,18,42,.28)}
+.n{margin-top:10px;font-size:12.5px;font-weight:500;opacity:.8;text-align:center}
+button{display:block;margin:10px auto 0;border:0;background:#5D3FFC;color:#fff;font:700 13px system-ui;padding:9px 16px;border-radius:999px;cursor:pointer}
+footer{max-width:760px;margin:0 auto;padding:0 18px 30px;text-align:center;font-size:12.5px;font-weight:500;opacity:.75}footer p{margin:6px 0}
+</style></head><body>
+<header><h1>Linktree da PromoPlanet: 3 opções</h1><p>As três opções têm o mesmo texto; só mudam as cores. Toque nos botões à vontade (nesta prévia nenhum entra em grupo de verdade) e veja o símbolo se desenhar, os produtos em órbita, a faixa rolando e a órbita aparecer ao passar o dedo.</p>
+<div class="ctl"><label><input type="checkbox" id="calm"> Ver como fica para quem desativa as animações (acessibilidade)</label></div></header>
+<div class="g">
+<figure><figcaption><b>A · Grafite + lima</b><small>Fundo grafite, logo claro</small></figcaption><iframe id="f-a" src="opcao-a.html" title="A · Grafite + lima"></iframe><div class="n">O de maior contraste: leitura fácil em qualquer tela.</div><button type="button" onclick="(function(f){f.src=f.src})(document.getElementById('f-a'))">↻ Rever a animação</button></figure>
+<figure><figcaption><b>B · Roxo profundo + lima</b><small>Fundo roxo profundo, logo claro</small></figcaption><iframe id="f-b" src="opcao-b.html" title="B · Roxo profundo + lima"></iframe><div class="n">O mais vibrante e o mais parecido com a energia da marca.</div><button type="button" onclick="(function(f){f.src=f.src})(document.getElementById('f-b'))">↻ Rever a animação</button></figure>
+<figure><figcaption><b>C · Claro + roxo</b><small>Fundo claro, logo roxo</small></figcaption><iframe id="f-c" src="opcao-c.html" title="C · Claro + roxo"></iframe><div class="n">O mais leve e limpo, com cara de site; o símbolo em roxo.</div><button type="button" onclick="(function(f){f.src=f.src})(document.getElementById('f-c'))">↻ Rever a animação</button></figure>
+</div>
+<footer><p><b>A escolha é de vocês.</b> Os três usam apenas as cores e os logos oficiais do manual de marca da VOWT.</p>
+<p>Os três botões são os grupos de WhatsApp de vocês: Geral, Cupons e Beleza &amp; Perfumes. Hoje o nome do botão segue o tema do grupo; nomes livres como estes entram numa próxima etapa.</p>
+<p>As fotos dos produtos são exemplos da página de demonstração de vocês. As animações seguem as do site de vocês (entrada, faixa, estrelas e a órbita inclinada). O símbolo da marca nunca gira nem é alterado: ele só se desenha, como na abertura do próprio site.</p></footer>
+<script>document.getElementById('calm').addEventListener('change',function(e){document.querySelectorAll('iframe').forEach(function(f){f.contentWindow.postMessage({pp:'calm',on:e.target.checked},'*')})})</script>
+</body></html>

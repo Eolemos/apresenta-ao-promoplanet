@@ -1,0 +1,269 @@
+/* MOCKUP da loja PromoPlanet no HubAds.
+   Só ajusta o que a spec decidiu: sem votos, comentários, alertas, salvos, perfil, "Postar oferta",
+   cupons por loja e redes sociais. O resto é a página deles, igual. */
+#demoBar,.demo{display:none!important}
+.hd [data-a="alertas"],.hd [data-a="salvos"],.hd [data-a="postar"],.hd [data-a="perfil"],#uBtn,.hd-post,.hd-post-m{display:none!important}
+.mnav [data-a="cupons"],.mnav [data-a="salvos"]{display:none!important}
+.mnav{grid-template-columns:repeat(3,1fr)!important}
+#cats [data-a="cupons"],.lojas-h [data-a="cupons"],.ft [data-a="cupons"]{display:none!important}
+[data-mock="oculta"]{display:none!important}
+.of .tp,.of .ib.cm,.of .ib.sv,.of .of-nc{display:none!important}
+.cp[data-mock="rotulo"]{pointer-events:none;cursor:default}
+[data-k="frete"]{display:none!important}
+@media(min-width:700px){.benef{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:699px){.benef .bn:nth-child(3){grid-column:1/-1}}
+.tick a small,.cd-l b{display:none!important}
+.hero-nums li:nth-child(n+2){display:none!important}
+.ft [data-a="tg"],.ft [data-a="postar"],.ft [data-a="alertas"],.ft [data-a="salvos"],.ft [data-a="perfil"]{display:none!important}
+#canais [data-a="tg"],#gal,.can-ms{display:none!important}
+.mock-selo{position:relative;z-index:70;background:#1E1C2E;color:#C9F14B;font:800 11.5px/1.35 'Nunito Sans',system-ui,sans-serif;letter-spacing:.04em;text-align:center;padding:7px 12px;border-bottom:1px solid rgba(201,241,75,.35)}
+/* OS 3 MODELOS, todos CLAROS (loja pede página clara), e a CHAVINHA de modo escuro.
+   C = a página deles como está. A e B trocam a paleta pelas variáveis de cor da página (--v, --vp, --vs).
+   O modo escuro vale para os 3 (chavinha no cabeçalho) e é proposta do mockup: não está na spec.
+   O "balão" atrás do título do hero (.hero-tx::before) esconde as bolinhas que passam por trás do texto:
+   fica ligado e ganha a cor do fundo do hero de cada modelo. */
+
+/* ---------- A · GRAFITE: clara, grafite com lima (o violeta vira grafite, os tons suaves viram lima) ---------- */
+html[data-modelo="a"]{--v:#1E1C2E;--vp:#34313F;--vs:#F2FBD5;--sym:#5D3FFC}
+html[data-modelo="a"] .btn-v,html[data-modelo="a"] .busca-go{color:var(--l)}
+html[data-modelo="a"] .tab.on{border-bottom-color:var(--l)}
+html[data-modelo="a"] .hero{background:var(--g)}
+html[data-modelo="a"] .hero::before{background:radial-gradient(60% 80% at 12% 0%,rgba(93,63,252,.5),transparent 62%),radial-gradient(52% 70% at 96% 100%,rgba(67,38,217,.42),transparent 60%)}
+html[data-modelo="a"] .hero-tx::before{background:radial-gradient(closest-side,#1E1C2E 0%,#1E1C2E 68%,rgba(30,28,46,0) 100%)}
+html[data-modelo="a"] .hero-nums li{background:rgba(255,255,255,.08)}
+html[data-modelo="a"] .fx-v{background:#3A3752}
+html[data-modelo="a"] .mov{background:var(--g)}
+html[data-modelo="a"] .ft{background:var(--g)}
+
+/* ---------- B · ROXO PROFUNDO: clara, cabeçalho e rodapé em roxo profundo sobre fundo lavanda ---------- */
+html[data-modelo="b"]{--v:#4326D9;--vp:#3A20C4;--vs:#E6E0FF}
+html[data-modelo="b"] body{background:#EEEAFF}
+html[data-modelo="b"] .hd{background:rgba(67,38,217,.97);border-bottom-color:rgba(255,255,255,.16)}
+html[data-modelo="b"] .hd-logo{color:#fff;--sym:var(--l)}
+html[data-modelo="b"] .hb{color:#fff}
+html[data-modelo="b"] .hb:hover{background:rgba(255,255,255,.16);color:#fff}
+html[data-modelo="b"] .busca{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3)}
+html[data-modelo="b"] .busca:focus-within{background:rgba(255,255,255,.24);border-color:var(--l);box-shadow:0 0 0 4px rgba(201,241,75,.2)}
+html[data-modelo="b"] .busca input{color:#fff}
+html[data-modelo="b"] .busca input::placeholder,html[data-modelo="b"] .busca>.ic{color:#DAD3FF}
+html[data-modelo="b"] .busca-go{background:var(--l);color:var(--g)}
+html[data-modelo="b"] .cats{background:#3A20C4;border-bottom-color:rgba(255,255,255,.14)}
+html[data-modelo="b"] .cat{color:#fff}
+html[data-modelo="b"] .cat .ic{color:var(--l)}
+html[data-modelo="b"] .cat:hover{background:rgba(255,255,255,.14)}
+html[data-modelo="b"] .cat.on{background:var(--l);color:var(--g)}
+html[data-modelo="b"] .cat.on .ic{color:var(--g)}
+html[data-modelo="b"] .cat small{color:#CFC6FF}
+html[data-modelo="b"] .cat.on small{color:#4A4760}
+html[data-modelo="b"] .tb{background:#EEEAFF}
+html[data-modelo="b"] .hero{background:var(--vp)}
+html[data-modelo="b"] .hero::before{background:radial-gradient(60% 80% at 12% 0%,rgba(93,63,252,.9),transparent 62%),radial-gradient(52% 70% at 96% 100%,rgba(30,28,46,.5),transparent 60%)}
+html[data-modelo="b"] .hero-tx::before{background:radial-gradient(closest-side,#3A20C4 0%,#3A20C4 68%,rgba(58,32,196,0) 100%)}
+html[data-modelo="b"] .hero-nums li{background:rgba(20,18,42,.32)}
+html[data-modelo="b"] .mov{background:var(--vp)}
+html[data-modelo="b"] .ft{background:#2E1A9E}
+
+/* ---------- D · VIDRO: clara, "Liquid Glass" da Apple na web, com as cores da PromoPlanet ----------
+   A biblioteca expo-glass-effect só existe no app nativo (Expo, iOS 26): numa página web o equivalente é
+   backdrop-filter. Vidro fosco (blur + saturação + borda de luz no topo + sombra suave) sobre uma "aurora" nas
+   cores da marca, senão não há o que desfocar. Princípios do guia apple-design (Emil Kowalski): resposta no
+   toque, materiais com peso diferente por tamanho, sem vidro claro empilhado em vidro claro, sombra suave no lugar
+   de linha dura, "materializar" a janela, e respeito a menos transparência, mais contraste e menos movimento. */
+html[data-modelo]{--ease:cubic-bezier(.32,.72,0,1)}
+html[data-modelo="d"]{--vidro:blur(20px) saturate(180%)}
+html[data-modelo="d"] body{background:#F3F1FF}
+html[data-modelo="d"] body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60% 38% at 6% 4%,rgba(93,63,252,.22),transparent 62%),radial-gradient(48% 34% at 98% 26%,rgba(201,241,75,.36),transparent 64%),radial-gradient(56% 38% at 14% 70%,rgba(185,172,255,.4),transparent 62%),radial-gradient(48% 34% at 92% 94%,rgba(93,63,252,.18),transparent 62%)}
+/* barras flutuantes (topo, categorias, abas, menu do celular) */
+html[data-modelo="d"] .hd{background:rgba(255,255,255,.56);-webkit-backdrop-filter:var(--vidro);backdrop-filter:var(--vidro);border-bottom:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.95)}
+html[data-modelo="d"] .cats{background:rgba(255,255,255,.5);-webkit-backdrop-filter:var(--vidro);backdrop-filter:var(--vidro);border-bottom:1px solid rgba(255,255,255,.7);box-shadow:0 12px 32px rgba(67,38,217,.1)}
+html[data-modelo="d"] .tb{background:rgba(243,241,255,.6);-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);border-bottom-color:rgba(255,255,255,.7)}
+html[data-modelo="d"] .busca{background:rgba(255,255,255,.72);border-color:rgba(255,255,255,.95);box-shadow:inset 0 1px 2px rgba(30,28,46,.06)}
+html[data-modelo="d"] .sug{background:rgba(255,255,255,.82);-webkit-backdrop-filter:var(--vidro);backdrop-filter:var(--vidro);border:1px solid rgba(255,255,255,.9);box-shadow:inset 0 1px 0 #fff,0 18px 44px rgba(67,38,217,.18)}
+/* cartões grandes: vidro mais grosso (borda de luz + sombra mais funda) */
+html[data-modelo="d"] .of,html[data-modelo="d"] .bn,html[data-modelo="d"] .sc,html[data-modelo="d"] .fl,html[data-modelo="d"] .vazio{background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(14px) saturate(170%);backdrop-filter:blur(14px) saturate(170%);border:1px solid rgba(255,255,255,.82);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 10px 32px rgba(67,38,217,.1),0 1px 2px rgba(30,28,46,.05)}
+html[data-modelo] .of{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+html[data-modelo] .of:hover{transform:translateY(-2px)}
+html[data-modelo="d"] .of:hover{box-shadow:inset 0 1px 0 #fff,0 16px 40px rgba(67,38,217,.16),0 1px 2px rgba(30,28,46,.05)}
+/* botões: resposta no toque (instantânea) e brilho de vidro */
+html[data-modelo="d"] .btn-v,html[data-modelo="d"] .busca-go{background:linear-gradient(180deg,#7457FF 0%,#5D3FFC 100%);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 6px 16px rgba(93,63,252,.32)}
+html[data-modelo="d"] .btn-v:hover{background:linear-gradient(180deg,#6A4CFF 0%,#4326D9 100%)}
+html[data-modelo="d"] .btn-l{box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 6px 16px rgba(168,213,47,.42)}
+html[data-modelo="d"] .btn-w{background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);border-color:rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+html[data-modelo="d"] .hero-nums li{background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.34)}
+html[data-modelo="d"] .cat.on{background:linear-gradient(180deg,#7457FF 0%,#5D3FFC 100%);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 4px 12px rgba(93,63,252,.35)}
+html[data-modelo] .btn:active,html[data-modelo] .cat:active,html[data-modelo] .ch:active,html[data-modelo] .tl:active,html[data-modelo] .lj:active,html[data-modelo] .hb:active,html[data-modelo] .tab:active,html[data-modelo] .tema:active{transform:scale(.97);transition:transform 100ms ease-out}
+/* menu do celular: cápsula de vidro flutuante */
+html[data-modelo="d"] body{--mnav:calc(82px + env(safe-area-inset-bottom,0px))}
+html[data-modelo="d"] .mnav{left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));height:62px;padding:0 4px;border-radius:28px;background:rgba(255,255,255,.62);-webkit-backdrop-filter:var(--vidro);backdrop-filter:var(--vidro);border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 0 #fff,0 14px 34px rgba(67,38,217,.24);color:#4A4760}
+html[data-modelo="d"] .mnav .on{color:#4326D9}
+html[data-modelo="d"] .mnav .mw{color:var(--g)}
+html[data-modelo="d"] .mnav .mw i{box-shadow:0 0 0 5px rgba(255,255,255,.7),0 10px 22px rgba(18,161,80,.45)}
+/* janela da oferta: vidro grosso que "materializa" (desfoque e opacidade juntos) */
+html[data-modelo="d"] .ov-p{background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(30px) saturate(180%);backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.9);box-shadow:inset 0 1px 0 #fff,0 24px 64px rgba(30,28,46,.28)}
+html[data-modelo="d"] .ov-f{background:transparent;border-top-color:rgba(30,28,46,.08)}
+@keyframes d-materializa{from{opacity:0;-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0)}}
+html[data-modelo] .ov.on .ov-p{animation:d-materializa .42s var(--ease) backwards}
+/* animações do D: entrada delicada (desfoque, subida e escala que assentam sem repique) e resposta suave.
+   "backwards" no lugar de "both": só vale antes de começar; depois o estilo normal (como o :hover) volta a mandar. */
+@keyframes d-entra{from{opacity:0;transform:translateY(16px) scale(.985);filter:blur(6px)}}
+@keyframes d-pop{from{transform:scale(.9)}}
+html[data-modelo] [data-rv]{filter:blur(8px);transform:translateY(22px) scale(.985);transition:opacity .85s var(--ease),transform .85s var(--ease),filter .85s var(--ease);transition-delay:var(--d,0s)}
+html[data-modelo] [data-rv].rv-in{filter:none;transform:none}
+html[data-modelo] .lista>*{animation:d-entra .62s var(--ease) backwards}
+html[data-modelo] .lista>*:nth-child(2){animation-delay:0.07s}
+html[data-modelo] .lista>*:nth-child(3){animation-delay:0.14s}
+html[data-modelo] .lista>*:nth-child(4){animation-delay:0.21s}
+html[data-modelo] .lista>*:nth-child(5){animation-delay:0.28s}
+html[data-modelo] .lista>*:nth-child(6){animation-delay:0.35s}
+html[data-modelo] .lista>*:nth-child(7){animation-delay:0.42s}
+html[data-modelo] .lista>*:nth-child(8){animation-delay:0.49s}
+html[data-modelo] .cat.on{animation:d-pop .45s var(--ease) backwards}
+html[data-modelo] .tab{transition:color .35s var(--ease),border-color .35s var(--ease)}
+html[data-modelo] .ov.on .md>*{animation:d-entra .6s var(--ease) backwards}
+html[data-modelo] .ov.on .md>*:nth-child(1){animation-delay:0.12s}
+html[data-modelo] .ov.on .md>*:nth-child(2){animation-delay:0.19s}
+html[data-modelo] .ov.on .md>*:nth-child(3){animation-delay:0.26s}
+html[data-modelo] .ov.on .md>*:nth-child(4){animation-delay:0.33s}
+html[data-modelo] .ov.on .md>*:nth-child(5){animation-delay:0.40s}
+html[data-modelo] .ov.on .md>*:nth-child(6){animation-delay:0.47s}
+html[data-modelo="d"] .ov-bg{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+html[data-modelo].no-js [data-rv]{filter:none}
+/* celular e aparelho fraco: só 2 desfoques fixos (topo e menu de baixo) + a janela da oferta; cartões, categorias e abas ficam
+   translúcidos SEM desfoque, e a entrada dos cartões não usa desfoque (o filtro blur animado é o que mais pesa) */
+@keyframes d-entra-leve{from{opacity:0;transform:translateY(12px)}}
+@media(max-width:699px){
+html[data-modelo="d"]{--vidro:blur(14px) saturate(160%)}
+html[data-modelo="d"] .of,html[data-modelo="d"] .bn,html[data-modelo="d"] .sc,html[data-modelo="d"] .fl,html[data-modelo="d"] .vazio{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(255,255,255,.88)}
+html[data-modelo="d"] .cats,html[data-modelo="d"] .tb{-webkit-backdrop-filter:none;backdrop-filter:none}
+html[data-modelo="d"] .cats{background:rgba(255,255,255,.86)}
+html[data-modelo="d"] .tb{background:rgba(243,241,255,.9)}
+html[data-modelo] [data-rv]{filter:none}
+html[data-modelo] .lista>*,html[data-modelo] .ov.on .md>*{animation-name:d-entra-leve}
+html[data-modelo="d"][data-tema="escuro"] .cats,html[data-modelo="d"][data-tema="escuro"] .tb{background:rgba(30,28,46,.92)}
+}
+/* navegador sem backdrop-filter: barras e cartões opacos (nada fica ilegível) */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+html[data-modelo="d"] .of,html[data-modelo="d"] .bn,html[data-modelo="d"] .sc,html[data-modelo="d"] .fl,html[data-modelo="d"] .vazio,html[data-modelo="d"] .hd,html[data-modelo="d"] .cats,html[data-modelo="d"] .tb,html[data-modelo="d"] .mnav,html[data-modelo="d"] .sug,html[data-modelo="d"] .ov-p{background:#fff}
+}
+/* acessibilidade: menos transparência, mais contraste, menos movimento */
+@media(prefers-reduced-transparency:reduce){html[data-modelo="d"] .of,html[data-modelo="d"] .bn,html[data-modelo="d"] .sc,html[data-modelo="d"] .fl,html[data-modelo="d"] .vazio,html[data-modelo="d"] .hd,html[data-modelo="d"] .cats,html[data-modelo="d"] .tb,html[data-modelo="d"] .mnav,html[data-modelo="d"] .sug,html[data-modelo="d"] .ov-p{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
+@media(prefers-contrast:more){html[data-modelo="d"] .of,html[data-modelo="d"] .bn,html[data-modelo="d"] .sc,html[data-modelo="d"] .fl,html[data-modelo="d"] .vazio,html[data-modelo="d"] .hd,html[data-modelo="d"] .cats,html[data-modelo="d"] .tb,html[data-modelo="d"] .mnav,html[data-modelo="d"] .sug,html[data-modelo="d"] .ov-p{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;border:1.5px solid #1E1C2E}}
+@media(prefers-reduced-motion:reduce){html[data-modelo] .of,html[data-modelo] .ov.on .ov-p,html[data-modelo] .lista>*,html[data-modelo] .cat.on,html[data-modelo] .ov.on .md>*{transition:none;animation:none}html[data-modelo] [data-rv]{filter:none;transition:none}html[data-modelo] .of:hover{transform:none}}
+
+/* ---------- MODO ESCURO (chavinha): página escura, cartões brancos; vale para A, B e C ---------- */
+html[data-tema="escuro"] body{background:#1E1C2E}
+html[data-tema="escuro"] .hd{background:rgba(30,28,46,.96);border-bottom-color:rgba(255,255,255,.1)}
+html[data-tema="escuro"] .hd-logo{color:#fff;--sym:var(--l)}
+html[data-tema="escuro"] .hb{color:#E7E3FA}
+html[data-tema="escuro"] .hb:hover{background:rgba(255,255,255,.1);color:#fff}
+html[data-tema="escuro"] .busca{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
+html[data-tema="escuro"] .busca:focus-within{background:rgba(255,255,255,.14);border-color:var(--l);box-shadow:0 0 0 4px rgba(201,241,75,.16)}
+html[data-tema="escuro"] .busca input{color:#fff}
+html[data-tema="escuro"] .busca input::placeholder,html[data-tema="escuro"] .busca>.ic{color:#B7B2D0}
+html[data-tema="escuro"] .busca-go{background:var(--l);color:var(--g)}
+html[data-tema="escuro"] .cats{background:#1E1C2E;border-bottom-color:rgba(255,255,255,.1)}
+html[data-tema="escuro"] .cat{color:#E7E3FA}
+html[data-tema="escuro"] .cat .ic{color:var(--l)}
+html[data-tema="escuro"] .cat:hover{background:rgba(255,255,255,.1)}
+html[data-tema="escuro"] .cat.on{background:var(--l);color:var(--g)}
+html[data-tema="escuro"] .cat.on .ic{color:var(--g)}
+html[data-tema="escuro"] .cat small{color:#B7B2D0}
+html[data-tema="escuro"] .cat.on small{color:#4A4760}
+html[data-tema="escuro"] .tb{background:#1E1C2E;border-bottom-color:rgba(255,255,255,.14)}
+html[data-tema="escuro"] .tab{color:#C9C4E4}
+html[data-tema="escuro"] .tab:hover{color:#fff}
+html[data-tema="escuro"] .tab.on{color:var(--l);border-bottom-color:var(--l)}
+html[data-tema="escuro"] .lojas-h h2,html[data-tema="escuro"] .can .h2,html[data-tema="escuro"] .at b{color:#fff}
+html[data-tema="escuro"] .at,html[data-tema="escuro"] #maisT,html[data-tema="escuro"] .aviso,html[data-tema="escuro"] .can .lead{color:#C9C4E4}
+html[data-tema="escuro"] .can .kick,html[data-tema="escuro"] .at .lk{color:var(--l)}
+html[data-tema="escuro"] .fx-g{background:#2B2842}
+html[data-tema="escuro"] .mov{background:#14122A}
+html[data-tema="escuro"] .ft{background:#121027}
+html[data-tema="escuro"] .totop{background:var(--l);color:var(--g)}
+html[data-tema="escuro"] .toast{box-shadow:0 0 0 1.5px rgba(201,241,75,.5),0 16px 40px rgba(0,0,0,.5)}
+
+/* D no modo escuro: vidro escuro nas barras, cartões de vidro bem fosco (o texto continua escuro e legível) */
+html[data-modelo="d"][data-tema="escuro"] body{background:#1E1C2E}
+html[data-modelo="d"][data-tema="escuro"] body::before{background:radial-gradient(60% 38% at 6% 4%,rgba(93,63,252,.5),transparent 62%),radial-gradient(48% 34% at 98% 26%,rgba(201,241,75,.14),transparent 64%),radial-gradient(56% 38% at 14% 70%,rgba(67,38,217,.4),transparent 62%)}
+html[data-modelo="d"][data-tema="escuro"] .hd{background:rgba(30,28,46,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+html[data-modelo="d"][data-tema="escuro"] .cats{background:rgba(30,28,46,.5);border-bottom-color:rgba(255,255,255,.12);box-shadow:0 12px 32px rgba(0,0,0,.35)}
+html[data-modelo="d"][data-tema="escuro"] .tb{background:rgba(30,28,46,.55);border-bottom-color:rgba(255,255,255,.14)}
+html[data-modelo="d"][data-tema="escuro"] .busca{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);box-shadow:none}
+html[data-modelo="d"][data-tema="escuro"] .busca-go{background:var(--l);color:var(--g);box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+html[data-modelo="d"][data-tema="escuro"] .cat.on{background:var(--l);color:var(--g);box-shadow:none}
+html[data-modelo="d"][data-tema="escuro"] .of,html[data-modelo="d"][data-tema="escuro"] .bn,html[data-modelo="d"][data-tema="escuro"] .sc,html[data-modelo="d"][data-tema="escuro"] .fl,html[data-modelo="d"][data-tema="escuro"] .vazio{background:rgba(255,255,255,.9)}
+html[data-modelo="d"][data-tema="escuro"] .mnav{background:rgba(30,28,46,.62);border-color:rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 14px 34px rgba(0,0,0,.5);color:#C9C4E4}
+html[data-modelo="d"][data-tema="escuro"] .mnav .on{color:var(--l)}
+html[data-modelo="d"][data-tema="escuro"] .mnav .mw{color:#fff}
+html[data-modelo="d"][data-tema="escuro"] .mnav .mw i{box-shadow:0 0 0 5px rgba(30,28,46,.7),0 10px 22px rgba(18,161,80,.45)}
+
+/* ---------- a chavinha de modo escuro (no cabeçalho): só o sol e a lua, sem texto ---------- */
+.tema{display:inline-flex;align-items:center;height:42px;padding:0 4px;border-radius:999px}
+.tema-t{position:relative;flex:none;width:58px;height:30px;border-radius:999px;background:#8F8AA8;transition:background .25s}
+.tema-i{position:absolute;top:7px;width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tema-sol{left:7px}.tema-lua{right:7px}
+.tema-k{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;color:#1E1C2E;display:grid;place-items:center;box-shadow:0 1px 4px rgba(14,12,32,.35);transition:transform .25s,background .25s,color .25s}
+.tema-k svg{grid-area:1/1;width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tema-km{display:none}
+.tema[aria-checked="true"] .tema-t{background:var(--l)}
+.tema[aria-checked="true"] .tema-i{stroke:#1E1C2E}
+.tema[aria-checked="true"] .tema-k{transform:translateX(28px);background:#1E1C2E;color:var(--l)}
+.tema[aria-checked="true"] .tema-ks{display:none}
+.tema[aria-checked="true"] .tema-km{display:block}
+html[data-modelo="b"] .tema-t{background:rgba(255,255,255,.3)}
+html[data-modelo="b"] .tema[aria-checked="true"] .tema-t{background:var(--l)}
+.md .tp,.md .ib.sv,.md [data-a="acabou"],.md [data-a="copiar"]{display:none!important}
+/* MODELO C: a página deles como está (referência, sem regra). */
+[data-k="semFim"]{display:none!important}
+/* a spec não tem estas ações em lugar nenhum (cabeçalho, rodapé, menu do celular) */
+[data-a="postar"],[data-a="alertas"],[data-a="alerta-q"],[data-a="salvos"],[data-a="perfil"],[data-a="info"],[data-a="tg"],[data-a="cupons"]{display:none!important}
+/* AVISO DE SAIDA (modal antes do Mercado Livre): o mesmo aviso que o HubAds ja tem (5 s, mesma aba). As cores vem das variaveis de cada modelo. */
+.sai{position:fixed;inset:0;z-index:110;display:flex;align-items:center;justify-content:center;padding:16px;visibility:hidden;pointer-events:none}
+.sai.on{visibility:visible;pointer-events:auto}
+.sai-bg{position:absolute;inset:0;background:rgba(14,12,32,.62);opacity:0;transition:opacity .25s;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.sai.on .sai-bg{opacity:1}
+.sai-p{position:relative;width:100%;max-width:512px;max-height:calc(100vh - 32px);overflow:auto;background:#fff;border:2px solid var(--bd);border-radius:var(--r1);padding:24px 20px;text-align:center;box-shadow:0 24px 64px rgba(30,28,46,.28);opacity:0;transform:translateY(10px) scale(.98);transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.sai.on .sai-p{opacity:1;transform:none}
+@media(min-width:640px){.sai-p{padding:32px}}
+.sai-pr{display:flex;align-items:flex-start;justify-content:center;gap:16px}
+.sai-s{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+.sai-s b{font:800 12px/16px var(--fd);color:var(--g)}
+.sai-ic{display:grid;place-items:center;width:56px;height:56px;flex:none;border-radius:30%;overflow:hidden}
+.sai-ic.pp{background:var(--vs);--sym:var(--v)}
+.sai-ic.pp .sym{width:34px;height:auto}
+.sai-ic.ml{background:#FFE600;padding:6px}
+.sai-ic.ml img{display:block;width:100%;height:100%}
+.sai-dots{display:flex;gap:6px;padding-top:24px}
+.sai-dots i{width:8px;height:8px;border-radius:50%;background:var(--v);animation:sai-pula 1s infinite}
+.sai-dots i:nth-child(2){animation-delay:.15s}
+.sai-dots i:nth-child(3){animation-delay:.3s}
+@keyframes sai-pula{0%,100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,.2,1)}}
+.sai-p h2{margin:20px 0 0;font:900 20px/24px var(--fd);color:var(--g)}
+.sai-ex{margin:8px 0 0;font:500 14px/1.55 var(--ft);color:var(--g2)}
+.sai-of{margin:12px 0 0;font:800 14px/20px var(--ft);color:var(--g);text-wrap:balance}
+.sai-n{margin:16px 0 0;font:800 14px/20px var(--ft);color:var(--v);font-variant-numeric:tabular-nums}
+.sai-p .btn{margin:16px 0 0;min-height:50px}
+.sai-c{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;padding:0 16px;font:700 14px var(--ft);color:var(--cz);text-decoration:underline;text-underline-offset:4px}
+.sai-c:hover{color:var(--g)}
+.sai-af{margin:12px 0 0;font:500 12px/16px var(--ft);color:var(--cz)}
+html[data-modelo="a"] .sai-ic.pp{background:var(--g);--sym:var(--l)}
+html[data-modelo="b"] .sai-ic.pp{background:var(--v);--sym:var(--l)}
+html[data-modelo="d"] .sai-bg{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+html[data-modelo="d"] .sai-p{background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(30px) saturate(180%);backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.9);box-shadow:inset 0 1px 0 #fff,0 24px 64px rgba(30,28,46,.28)}
+html[data-modelo="d"] .sai-ic.pp{background:rgba(234,230,255,.85);box-shadow:inset 0 1px 0 #fff}
+html[data-modelo] .sai.on .sai-p{animation:d-materializa .42s var(--ease) backwards}
+@media(prefers-reduced-transparency:reduce){html[data-modelo="d"] .sai-p{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
+@media(prefers-contrast:more){html[data-modelo="d"] .sai-p{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;border:2px solid var(--g)}}
+@media(prefers-reduced-motion:reduce){.sai-bg,.sai-p{transition:none}.sai-dots i{animation:none}html[data-modelo] .sai.on .sai-p{animation:none}}
+/* MOVIMENTO COMPARTILHADO: as animacoes do modelo D (entrada dos cartoes com subida e desfoque, janela da oferta que se forma, categoria que assenta, resposta no toque, aviso de saida) valem para os 4 modelos. O vidro (transparencia e desfoque do fundo) continua so no D. Tudo some com prefers-reduced-motion. */
+/* INSTAGRAM da PromoPlanet (@promoplanetbr) de volta: perfil no bloco de canais, rodape e menu do celular. Sem os posts de exemplo (seriam falsos); Telegram segue fora. */
+#canais .ig{grid-template-columns:minmax(0,1fr);justify-items:start}
+#canais .ig-h{flex-direction:row;align-items:center}
+html[data-modelo="a"] .ig-av{background:var(--g);--sym:var(--l)}
+html[data-modelo="b"] .ig-av{background:var(--v);--sym:var(--l)}
+html[data-modelo="c"] .ig-av,html[data-modelo="d"] .ig-av{--sym:#fff}
+/* FECHAR SUAVE: a janela da oferta e o aviso de saida saem com a transicao (antes a visibilidade era cortada na hora e o fechamento sumia de uma vez) */
+.ov{transition:visibility 0s .45s}
+.ov.on{transition:visibility 0s}
+.sai{transition:visibility 0s .3s}
+.sai.on{transition:visibility 0s}
